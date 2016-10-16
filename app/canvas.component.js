@@ -3,15 +3,19 @@ app.component('drawing', {
   controller: function DrawingCtrl($scope) {
     var ctrl = this;
 
-    $scope.$watch(function() {return ctrl.eventList}, function (newValue) {
-			console.log(newValue);
-		});
 
-    $scope.$watch(function() {return ctrl.schedClr}, function (newValue) {
-			console.log(newValue);
-		});
 
-    (function() {
+    (function thisCanvas() {
+
+      $scope.$watch(function() {return ctrl.eventList}, function (newValue) {
+        console.log(newValue);
+
+      });
+
+      $scope.$watch(function() {return ctrl.schedClr}, function (newValue) {
+        console.log(newValue);
+        redraw();
+      });
 
           console.log(ctrl.eventList);
           console.log(ctrl.schedClr);
@@ -76,12 +80,6 @@ app.component('drawing', {
                     fontsize = window.innerHeight / 40;
                     var fontsizeString = fontsize.toString();
                     context.font = fontsizeString.concat("px Comic Sans");
-
-                    context.fillText("8:00", window.innerWidth / 9 , window.innerHeight / 2);
-
-
-
-
 
 
                     context.fillStyle = "#DBDBDB";

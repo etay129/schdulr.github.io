@@ -1,0 +1,266 @@
+html {
+
+    background: #d0cfcf;
+    height: 100%;
+}
+
+/* basic text */
+
+body {
+    background: #fff;
+
+    color: #545454;
+    font-family: "Calibri", Helvetica, Arial, san-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 2em 2em 4em;
+
+    min-height: 100%;
+}
+
+/* headers */
+h1{
+    font-family: 'Arial', Arial, san-serif;
+    text-align: center;
+    color: #d98d96;
+    letter-spacing: 10px;
+    font-size: 800%;
+    font-weight: 600;
+    line-height: 2.3;
+    transition: color 0.5s ease;
+}
+
+h1:hover {
+    color: #d0cfcf;
+}
+
+/* other text stuff */
+p {
+  color: #d98d96;
+  font-family: "Arial", Helvetica, Arial, san-serif;
+  font-size: 200%;
+  font-weight: 600;
+  line-height: 1.5;
+  display: inline;
+}
+
+/* links */
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #d98d96;
+    color: white;
+
+}
+
+/* buttons */
+.b1, .b2 {
+    background: #a9a9a9;
+    font-family: 'Helvetica';
+    font-weight: 600;
+    color: white;
+    border: none;
+    padding: 15px 15px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+}
+
+.b2 {
+  position: relative;
+  margin-top: 50px;
+}
+
+.b1:hover, .b2:hover {
+    background-color: #d98d96;
+
+}
+
+.btn-image {
+  background-color: white;
+  border: white;
+}
+
+.btn-circle {
+  display:inline-block;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color:#f5f5f5
+  text-align:center;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.btn-circle:hover {
+  box-shadow: 0 0 3px gray;
+}
+
+.btn-circle.active {
+  box-shadow: 0 0 3px black;
+}
+
+.btn-circle.btn1 {
+  background: #93c99b;
+}
+
+.btn-circle.btn2 {
+  background: #a7a1a7;
+}
+
+.btn-circle.btn3 {
+  background: #c5a88d;
+}
+
+.btn-circle.btn4 {
+  background: #fa7278;
+}
+
+.btn-circle.btn5 {
+  background: #81d8e8;
+}
+
+.btn-circle.btn6 {
+  background: #94e9c2;
+}
+
+eb {
+    display: inline-block;
+    transition: color 0.5s ease;
+
+    color: #a9a9a9;
+    font-size: 200%;
+
+}
+
+eb:hover {
+    color:#d98d96;
+}
+
+input[type="text"]{
+    width: 100%
+    position: relative;
+    box-sizing: content-box;
+    border-radius: 4px;
+
+    padding-left: 10px;
+    font-size: 150%;
+    text-align: left;
+    overflow-x: hidden;
+
+    margin-left: 1%;
+    border: 2px solid lightgray;
+    background-color: white;
+    transition: width 0.4s ease-in-out;
+}
+
+.container {
+  display: inline-flex;
+}
+
+.styled-select.slate {
+   height: 34px;
+   width: 6%;
+   padding: 5px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 100%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: block;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+
+@keyframes slide-enter-events {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-38%);
+  }
+}
+
+@keyframes slide-enter-home {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-leave-home {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-230%);
+  }
+}
+
+@keyframes slide-leave-events {
+  0% {
+    transform: translateY(-75%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+.page-home.ng-enter {
+  animation: slide-enter-home .6s cubic-bezier(0.4, 0, 0.2, 1) 500ms backwards;
+}
+
+.page-home.ng-leave {
+  animation: slide-leave-home .6s cubic-bezier(0.4, 0, 0.2, 1) 500ms backwards;
+}
+
+.page-events.ng-enter {
+  animation: slide-enter-events .6s cubic-bezier(0.4, 0, 0.2, 1) 500ms backwards;
+}
+
+.page-events.ng-leave {
+  animation: slide-leave-events .6s cubic-bezier(0.4, 0, 0.2, 1) 500ms backwards;
+}
+
+canvas {
+  position: relative;
+  left: -100px;
+  top: 0px;
+}

@@ -1,0 +1,145 @@
+<div>
+  <div>
+    <label for="title"><p>TITLE:</p></label>
+
+    <input id="title" type="text" ng-model="title" /><br />
+
+    <p >COLOUR:</p>
+    <button type="button" class="btn1 btn-circle sched-clr active" ng-click="schedColour('btn1', '93c99b')"></button>
+    <button type="button" class="btn2 btn-circle sched-clr" ng-click="schedColour('btn2', 'a7a1a7')"></button>
+    <button type="button" class="btn3 btn-circle sched-clr" ng-click="schedColour('btn3', 'c5a88d')"></button>
+    <br />
+
+    <p>EDIT EVENTS:</p>
+    <button type="button" class="btn-image"><eb class="glyphicon glyphicon-pencil"></eb></button>
+    <button type="button" class="btn-image" ng-click="toggleModal();"><eb class="glyphicon glyphicon-plus"></eb></button>
+  </div>
+
+  <div ng-hide="addEvent">
+    <div id="eventModal" class="modal">
+      <div class="modal-content">
+        <form name="new-event">
+          <p>Event Name:</p>
+          <input name="new-name" type="text" ng-model="newEvent.name"/><br />
+
+<div class="container">
+          <p>Start:</p>
+          <div class="styled-select slate">
+          <select name="start-hour" ng-model="newEvent.startHour">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          </div>
+          <p>:</p>
+          <div class="styled-select slate">
+          <select name="start-minute" ng-model="newEvent.startMinute">
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+          </select>
+        </div>
+        <div class="styled-select slate">
+          <select name="start-am-pm" ng-model="newEvent.startAmPm">
+            <option value="am">am</option>
+            <option value="pm">pm</option>
+          </select>
+        </div>
+        </div>
+          <br />
+
+<div class="container">
+          <p>End:</p>
+          <div class="styled-select slate">
+          <select name="end-hour" ng-model="newEvent.endHour">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+          <p>:</p>
+          <div class="styled-select slate">
+          <select name="end-minute" ng-model="newEvent.endMinute">
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+          </select>
+        </div>
+        <div class="styled-select slate">
+          <select name="end-am-pm" ng-model="newEvent.endAmPm">
+            <option value="am">am</option>
+            <option value="pm">pm</option>
+          </select>
+        </div>
+      </div>
+          <br />
+
+          <p>Days:</p>
+          <p>S</p> <input type="checkbox" name="days" value="Sunday">
+          <p>M</p> <input type="checkbox" name="days" value="Monday">
+          <p>T</p> <input type="checkbox" name="days" value="Tuesday">
+          <p>W</p> <input type="checkbox" name="days" value="Wednesday">
+          <p>T</p> <input type="checkbox" name="days" value="Thursday">
+          <p>F</p> <input type="checkbox" name="days" value="Friday">
+          <p>S</p> <input type="checkbox" name="days" value="Saturday">
+          <br />
+
+          <p>Colour:</p>
+          <button type="button" class="btn4 btn-circle event-clr active" ng-click="eventColour('btn4', 'fa7278')"></button>
+          <button type="button" class="btn5 btn-circle event-clr" ng-click="eventColour('btn5', '81d8e8')"></button>
+          <button type="button" class="btn6 btn-circle event-clr" ng-click="eventColour('btn6', '94e9c2')"></button>
+          <br />
+        </form>
+
+        <button class="b2" ng-click="submitForm();">SUBMIT</button>
+        <button class="b2" ng-click="toggleModal();">CLOSE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <drawing event-list="$scope.events"></drawing>
+</div>
+
+<div>
+  <button class="b2" ng-click="visitExport();">EXPORT</button>
+  &nbsp;
+  <span><button class="b2" ng-click="visitHome();">BACK</button></span>
+</div>

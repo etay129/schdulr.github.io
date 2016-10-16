@@ -18,12 +18,6 @@ app.config(function($routeProvider) {
             controller: 'EventsCtrl'
         })
 
-        // contact page
-        .when('/export', {
-            templateUrl: 'page-export.html',
-            controller: 'ExportCtrl'
-        })
-
         .otherwise('/', {
             templateUrl: 'page-home.html',
             controller: 'MainCtrl'

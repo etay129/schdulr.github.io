@@ -135,11 +135,19 @@
 </div>
 
 <div>
-  <drawing event-list="$scope.events"></drawing>
+  <drawing event-list='events' sched-clr='colour'></drawing>
 </div>
 
 <div>
-  <button class="b2" ng-click="visitExport();">EXPORT</button>
-  &nbsp;
-  <span><button class="b2" ng-click="visitHome();">BACK</button></span>
+  <span>
+    <button class="b1">PDF</button>
+    &nbsp;
+    <button class="b1">JSON</button>
+    &nbsp;
+    <button class="b1">JAVASCRIPT</button>
+  </span><br />
+</div>
+
+<div>
+  <span><button class="b2" ng-click="visitHome();">HOME</button></span>
 </div>

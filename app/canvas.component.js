@@ -1,14 +1,20 @@
 app.component('drawing', {
-  template: "<canvas id='c' event-list='$scope.events'></canvas>",
+  template: "<canvas id='c'></canvas>",
   controller: function DrawingCtrl($scope) {
     var ctrl = this;
 
-    $scope.$watch("ctrl.eventList", function (newValue) {
+    $scope.$watch(function() {return ctrl.eventList}, function (newValue) {
+			console.log(newValue);
+		});
+
+    $scope.$watch(function() {return ctrl.schedClr}, function (newValue) {
 			console.log(newValue);
 		});
 
     (function() {
 
+          console.log(ctrl.eventList);
+          console.log(ctrl.schedClr);
     			var
     				// Obtain a reference to the canvas element
     				// using its id.
@@ -48,7 +54,7 @@ app.component('drawing', {
     				context.strokeStyle = 'white';
     				context.lineWidth = '1';
 
-                    context.fillStyle = "#2E5DDF";
+                    context.fillStyle = ctrl.schedClr;
 
                     // top square
     				context.fillRect(widthIndent, heightIndent , columnWidth * 7 , heightIndent);
@@ -169,6 +175,7 @@ app.component('drawing', {
     		})();
   },
   bindings: {
-    eventList: '<',
+    eventList: '=',
+    schedClr: '=',
   }
 })

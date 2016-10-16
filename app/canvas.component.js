@@ -13,6 +13,12 @@ app.component('drawing', {
         redraw();
       }, true);
 
+      $scope.$watch(function() {return ctrl.schedTitle}, function (newValue) {
+        console.log(newValue);
+
+        redraw();
+      }, true);
+
       $scope.$watch(function() {return ctrl.schedClr}, function (newValue) {
         console.log(newValue);
         redraw();

@@ -16,6 +16,10 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
     colour: '#fa7278',
   };
 
+  $scope.$watch('$scope.title', function(newValue) {
+    $scope.$apply();
+  });
+
   $scope.schedColour = function(btn, colour) {
     $scope.colour = "#" + colour;
     $scope.updateActive('.sched-clr.active', '.' + btn)

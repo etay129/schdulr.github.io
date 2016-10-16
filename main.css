@@ -236,7 +236,7 @@ input[type="text"]{
 
 @keyframes slide-leave-events {
   0% {
-    transform: translateY(-75%);
+    transform: translateY(-79%);
   }
   100% {
     transform: translateY(50%);

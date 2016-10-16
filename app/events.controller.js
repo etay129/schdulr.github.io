@@ -171,13 +171,21 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
     $scope.addEvent = !$scope.addEvent;
   };
 
-  $scope.visitExport = function() {
-    window.location='#export'
-  };
+  $scope.toPdf = function() {
+    var canvas = document.getElementById('c');
+
+    // only jpeg is supported by jsPDF
+    var imgData = canvas.toDataURL("image/jpeg", 1.0);
+    var pdf = new jsPDF();
+
+    pdf.addImage(imgData, 'JPEG', 0, 0);
+    var download = document.getElementById('download');
+
+    pdf.save("download.pdf");
+    }
 
   $scope.visitHome = function() {
     window.location='#'
   };
-
 
 }])

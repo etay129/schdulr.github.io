@@ -44,8 +44,9 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
       delete $scope.newEvent.endMinute;
       delete $scope.newEvent.endAmPm;
 
-      console.log($scope.newEvent);
       $scope.events.push($scope.newEvent);
+      console.log($scope.events);
+
 
       var newEvent = $scope.events[$scope.events.length - 1];
       var i;
@@ -58,6 +59,7 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
           break;
         }
       }
+      console.log($scope.events);
 
       $scope.resetNewEvent();
       $scope.addEvent = !$scope.addEvent;
@@ -144,7 +146,6 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
         }
       }
     }
-    console.log($scope.newEvent.days);
     return true;
   };
 

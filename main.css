@@ -262,6 +262,6 @@ input[type="text"]{
 canvas {
   position: relative;
   left: -165px;
-  top: 0px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }

@@ -17,7 +17,7 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
   };
 
   $scope.$watch('$scope.title', function(newValue) {
-    $scope.$apply();
+    //$scope.$apply();
   });
 
   $scope.schedColour = function(btn, colour) {

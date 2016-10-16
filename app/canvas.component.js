@@ -75,13 +75,18 @@ app.component('drawing', {
                     context.fillRect(widthIndent, 0, columnWidth * 7 , heightIndent);
     				        context.fillRect(widthIndent, heightIndent , columnWidth * 7 , heightIndent);
 
-                    var fontsize = window.innerHeight / 30;
+                    var fontsize = window.innerHeight / 20;
                     var fontsizeString = fontsize.toString();
                     context.font = fontsizeString.concat("px Arial");
+                    var textWidth = context.measureText(ctrl.schedTitle).width;
 
                     context.fillStyle = "#FFFFFF";
 
-                    context.fillText(ctrl.schedTitle, innerWidth / 2 - widthIndent/4, heightIndent*3/4);
+                    context.fillText(ctrl.schedTitle, innerWidth / 2 - textWidth/2, heightIndent*3/4);
+
+                    fontsize = window.innerHeight / 30;
+                    var fontsizeString = fontsize.toString();
+                    context.font = fontsizeString.concat("px Arial");
                     context.fillText("S", widthIndent + columnWidth / 3, heightIndent * 1.75);
                     context.fillText("M", widthIndent + 4 * columnWidth / 3, heightIndent * 1.75);
                     context.fillText("T", widthIndent + 7 * columnWidth / 3, heightIndent * 1.75);

@@ -121,6 +121,8 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
   };
 
   $scope.validDays = function() {
+    $scope.newEvent.days = [];
+
     var days = document.getElementsByName('days');
 
     var j;
@@ -145,6 +147,14 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
         if ($scope.newEvent.days.includes(currDays[d])) {
           if (!$scope.noOverlap(currEvent, $scope.newEvent)) {
             alert("The new event " + $scope.newEvent.name + " overlaps with " + currEvent.name + " on " + currDays[d] + "s!");
+/*
+            var k;
+            for (k = 0; k < $scope.newEvent.days.length; k++) {
+              if ($scope.newEvent.days[k].checked) {
+                $scope.newEvent.days[k].checked = false;
+              }
+            }*/
+
             return false;
           }
         }
@@ -183,7 +193,7 @@ app.controller('EventsCtrl', ['$scope', function($scope) {
     var imgData = canvas.toDataURL("image/jpeg", 1.0);
     var pdf = new jsPDF();
 
-    pdf.addImage(imgData, 'JPEG', 0, 0);
+    pdf.addImage(imgData, 'JPEG', -50, -50);
     var download = document.getElementById('download');
 
     pdf.save("download.pdf");

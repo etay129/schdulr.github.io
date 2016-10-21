@@ -134,6 +134,14 @@ app.component('drawing', {
                     context.fillText("10:00", widthIndent + columnWidth / 8, 4 * heightIndent + height / 20 );
                     context.fillText("11:00", widthIndent + columnWidth / 8, 5 * heightIndent + height / 20 );
                     context.fillText("12:00", widthIndent + columnWidth / 8, 6 * heightIndent + height / 20 );
+                    context.fillText("1:00", widthIndent + columnWidth / 8, 7 * heightIndent + height / 20 );
+                    context.fillText("2:00", widthIndent + columnWidth / 8, 8 * heightIndent + height / 20 );
+                    context.fillText("3:00", widthIndent + columnWidth / 8, 9 * heightIndent + height / 20 );
+                    context.fillText("4:00", widthIndent + columnWidth / 8, 10 * heightIndent + height / 20 );
+                    context.fillText("5:00", widthIndent + columnWidth / 8, 11 * heightIndent + height / 20 );
+                    context.fillText("6:00", widthIndent + columnWidth / 8, 12 * heightIndent + height / 20 );
+                    context.fillText("7:00", widthIndent + columnWidth / 8, 13 * heightIndent + height / 20 );
+                    context.fillText("8:00", widthIndent + columnWidth / 8, 14 * heightIndent + height / 20 );
 
                     var i;
                     for (i = 0; i < ctrl.eventList.length; i++) {
